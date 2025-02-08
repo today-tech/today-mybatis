@@ -35,12 +35,12 @@ repositories {
 }
 
 dependencies {
-  api 'cn.taketoday:today-core'
   api 'org.mybatis:mybatis:3.5.9'
 
+  implementation('cn.taketoday:today-jdbc')
+  implementation('cn.taketoday:today-beans')
+
   compileOnly('cn.taketoday:today-web')
-  compileOnly('cn.taketoday:today-jdbc')
-  compileOnly('cn.taketoday:today-beans')
   compileOnly('cn.taketoday:today-context')
   compileOnly('cn.taketoday:today-framework')
 
@@ -49,6 +49,9 @@ dependencies {
 
   testImplementation 'cn.taketoday:today-test'
   testImplementation 'cn.taketoday:today-tx'
+  testImplementation('cn.taketoday:today-web')
+  testImplementation('cn.taketoday:today-context')
+  testImplementation('cn.taketoday:today-framework')
 
   testImplementation 'org.apache.derby:derby'
   testImplementation 'com.fasterxml.woodstox:woodstox-core'
